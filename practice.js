@@ -27,7 +27,7 @@ Inside this loop, change the value of each property to 0
 
 function objectLooper(number) {
     for (let key in number) {
-        // Code here
+        number[key] = 0// Code here
     }
     return number;
 };
@@ -51,10 +51,15 @@ If a value is greater than 3,000,000 set it to 0
 
 function stateLooper(obj) {
 	for (let key in obj) {
+        if(obj[key] > 3000000){
+            obj[key] = 0;
+        }
 		// Code here
-	}
-	return obj;
-};
+	    
+	
+    };
+    return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +71,10 @@ Once all falsy values and their properties are removed, return the object
 */
 
 function cleanUser(obj) {
-    // Code here
+    for(let key in obj){
+        if(!obj[key]) delete obj[key]
+    }
+    return obj    // Code here
 };
 
 
@@ -78,7 +86,12 @@ Return the updated user object
 */
 
 // Code here
-
+ let maxedOut = (user) => {
+     for(let key in user){
+        user[key] = 'max'
+     }
+     return user
+ }
 
 
 ////////// OBJECT DESTRUCTURING //////////
@@ -306,7 +319,9 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
+let multiply = (num1,num2) => {
+    return num1 * num2
+}
 
 
 ////////// PROBLEM 16 //////////
@@ -319,7 +334,7 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
+let concatenate = (str1,str2) => str1 + str2
 
 
 ////////// PROBLEM 17 //////////
@@ -333,7 +348,14 @@ You should not use the ES5 function declaration or function expression syntax in
 */
 
 // Code here
-
+let gemInfo = (gemType, gemSize, gemWeight) => {
+    let gem = {
+        gemType: gemType,
+        gemSize: gemSize,
+        gemWeight: gemWeight,
+    }
+    return gem
+}
 
 
 ////////// PROBLEM 18 //////////
@@ -359,7 +381,14 @@ let jobs = [
 
 
 // Code here
-
+let identifier = () => {
+    let filteredArray = jobs.filter(function(e, i, a){
+        if(e.programmer) {
+            return e
+        }
+    })
+    return filteredArray[0]
+}
 
 
 ////////// PROBLEM 19 //////////
