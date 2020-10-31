@@ -499,9 +499,9 @@ Make sure to use arrow functions combined with the reduce method
 */
 
 const productOfArray = numbers => {
-    let reduced = numbers.reduce(function(acc, curr){
+    let reducedVal = numbers.reduce(function(acc, curr){
         return acc + curr
     });
-    return reduced
+    return reducedVal
     // Code here
 }
